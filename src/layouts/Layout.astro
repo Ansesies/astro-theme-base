@@ -1,0 +1,72 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/footer.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro App</title>
+    <ClientRouter />
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <Header />
+    <slot />
+    <Footer />
+
+    <!-- Script global para menú hamburguesa -->
+    <script>
+     
+      let menuOpen = false;
+
+      function initMenuToggle() {
+        // Obtener los elementos del DOM
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Si alguno no existe, salimos
+        if (!menuToggle || !mobileMenu) {
+          console.log('Elementos del menú no encontrados');
+          return;
+        }
+        
+        // Asegurar que el menú comienza cerrado
+        menuOpen = false;
+        mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+        mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+        
+        // Añadir evento para el botón de menú
+        menuToggle.addEventListener('click', function() {
+          menuOpen = !menuOpen;
+          
+          if (menuOpen) {
+            mobileMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+            mobileMenu.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
+          } else {
+            mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+            mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+          }
+        });
+        
+        // Añadir eventos para los links del menú
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            menuOpen = false;
+            mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+            mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+          });
+        });
+      }
+      
+      // Ejecutar cuando se carga la página y después de cada navegación
+      document.addEventListener('astro:page-load', initMenuToggle);
+    </script>
+  </body>
+</html>

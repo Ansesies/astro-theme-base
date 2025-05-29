@@ -1,0 +1,89 @@
+---
+
+---
+
+<section class="max-w-7xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-3xl font-bold mb-8 text-gray-900 scroll-animation fade-in">Funciones Básicas de OpenPet</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      
+      <div class="p-6 bg-white/70 rounded-xl shadow-md hover:shadow-xl transition scroll-animation slide-up">
+        <div class="text-5xl mb-4 text-blue-600">🐾</div>
+        <h3 class="text-xl font-semibold mb-2">Crea el perfil de tu mascota</h3>
+        <p class="text-gray-700">Registra detalles importantes como raza, edad, y características para tener todo en un solo lugar.</p>
+      </div>
+      
+      <div class="p-6 bg-white/70 rounded-xl shadow-md hover:shadow-xl transition scroll-animation slide-up" style="animation-delay: 200ms;">
+        <div class="text-5xl mb-4 text-green-600">📋</div>
+        <h3 class="text-xl font-semibold mb-2">Historial médico</h3>
+        <p class="text-gray-700">Mantén un registro completo de las vacunas, tratamientos y consultas veterinarias de tu mascota.</p>
+      </div>
+      
+      <div class="p-6 bg-white/70 rounded-xl shadow-md hover:shadow-xl transition scroll-animation slide-up" style="animation-delay: 400ms;">
+        <div class="text-5xl mb-4 text-red-600">⏰</div>
+        <h3 class="text-xl font-semibold mb-2">Recordatorios de citas</h3>
+        <p class="text-gray-700">Recibe alertas para no olvidar las próximas citas o vacunas importantes.</p>
+      </div>
+      
+    </div>
+  </section>
+
+<style>
+  /* Estilos iniciales - elementos inicialmente invisibles */
+  .scroll-animation {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Efecto de fade in */
+  .fade-in {
+    transform: translateY(20px);
+  }
+  
+  /* Efecto de slide up */
+  .slide-up {
+    transform: translateY(40px);
+  }
+  
+  /* Clase que se aplica cuando el elemento está visible */
+  .animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function initScrollAnimations() {
+    // Seleccionar todos los elementos con la clase scroll-animation
+    const animatedElements = document.querySelectorAll('.scroll-animation');
+    
+    // Crear una nueva instancia de IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        // Si el elemento es visible
+        if (entry.isIntersecting) {
+          // Añadir la clase que activa la animación
+          entry.target.classList.add('animate');
+          // Dejar de observar el elemento una vez que ha sido animado
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      // Opciones del observer - elemento visible cuando está al 10% en el viewport
+      threshold: 0.3,
+      // Margen para activar antes de que el elemento entre completamente en el viewport
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    // Observar cada elemento con animación
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Inicializar animaciones cuando se carga la página
+  document.addEventListener('DOMContentLoaded', initScrollAnimations);
+  
+  // Reinicializar cuando se navega con ViewTransitions
+  document.addEventListener('astro:page-load', initScrollAnimations);
+</script>
