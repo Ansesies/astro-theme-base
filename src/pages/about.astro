@@ -3,6 +3,155 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <h1 class="text-3xl font-bold mb-4">About Us</h1>
-  <p>Esta es la página acerca de nosotros.</p>
+  <!-- Hero de la página "Sobre Nosotros" -->
+  <div class="relative bg-gradient-to-b from-[#5E388D]/10 to-white/5 py-16 md:py-24 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#5E388D] mb-6 font-['Montserrat',_sans-serif]">Sobre OpenPet</h1>
+        <div class="w-16 h-1 bg-[#F59D07] mx-auto mb-8 rounded-full"></div>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+          Innovando en el cuidado de mascotas con tecnología de vanguardia desde 2023.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Nuestra Historia -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex lg:items-center lg:gap-16">
+        <div class="lg:w-1/2 mb-12 lg:mb-0 scroll-animation fade-in">
+          <h2 class="text-3xl font-semibold mb-6 text-[#5E388D] font-['Montserrat',_sans-serif]">Nuestra Historia</h2>
+          <div class="w-12 h-1 bg-[#4DBECD] mb-8 rounded-full"></div>
+          <p class="text-gray-700 mb-6">
+            OpenPet nació de la pasión por mejorar la vida de las mascotas y facilitar su cuidado a través de soluciones tecnológicas innovadoras. 
+          </p>
+          <p class="text-gray-700 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel vestibulum magna. Sed lacinia, libero in auctor feugiat, magna ante posuere dolor, quis placerat velit augue eget nulla. Nullam quis scelerisque quam, vel tincidunt augue. Nam consectetur magna id dictum euismod.
+          </p>
+          <p class="text-gray-700">
+            Vestibulum eleifend augue lorem, feugiat condimentum ex tincidunt in. Quisque tempus nulla eu augue dictum, at molestie eros varius. Pellentesque mauris metus, facilisis at suscipit ac, aliquam et mauris.
+          </p>
+        </div>
+        <div class="lg:w-1/2 relative scroll-animation slide-up">
+          <div class="bg-[#5E388D]/5 rounded-2xl p-6 relative">
+            <div class="absolute top-0 right-0 w-28 h-28 bg-[#F59D07]/10 rounded-full -mt-10 -mr-10 z-0"></div>
+            <div class="absolute bottom-0 left-0 w-20 h-20 bg-[#EB5B7C]/10 rounded-full -mb-8 -ml-8 z-0"></div>
+            <img src="/pet-hero.jpg" alt="OpenPet Mascotas" class="rounded-xl relative z-10 shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Misión y Valores -->
+  <section class="py-16 bg-gradient-to-r from-[#5E388D]/5 to-[#4DBECD]/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-animation fade-in">
+        <h2 class="text-3xl font-semibold mb-6 text-[#5E388D] font-['Montserrat',_sans-serif]">Misión y Valores</h2>
+        <div class="w-16 h-1 bg-[#EB5B7C] mx-auto mb-8 rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Valor 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow scroll-animation fade-in" style="animation-delay: 0ms;">
+          <div class="bg-[#5E388D]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#5E388D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-[#5E388D] text-center font-['Montserrat',_sans-serif]">Confianza y Seguridad</h3>
+          <p class="text-gray-700 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel vestibulum magna. Sed lacinia, libero in auctor feugiat.</p>
+        </div>
+        
+        <!-- Valor 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow scroll-animation fade-in" style="animation-delay: 200ms;">
+          <div class="bg-[#4DBECD]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#4DBECD]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-[#4DBECD] text-center font-['Montserrat',_sans-serif]">Innovación Constante</h3>
+          <p class="text-gray-700 text-center">Vestibulum eleifend augue lorem, feugiat condimentum ex tincidunt in. Quisque tempus nulla eu augue dictum.</p>
+        </div>
+        
+        <!-- Valor 3 -->
+        <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow scroll-animation fade-in" style="animation-delay: 400ms;">
+          <div class="bg-[#F59D07]/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#F59D07]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-[#F59D07] text-center font-['Montserrat',_sans-serif]">Amor por las Mascotas</h3>
+          <p class="text-gray-700 text-center">Nam consectetur magna id dictum euismod. Vestibulum eleifend augue lorem, feugiat condimentum ex tincidunt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Equipo -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 scroll-animation fade-in">
+        <h2 class="text-3xl font-semibold mb-6 text-[#5E388D] font-['Montserrat',_sans-serif]">Nuestro Equipo</h2>
+        <div class="w-16 h-1 bg-[#F59D07] mx-auto mb-8 rounded-full"></div>
+        <p class="text-gray-700 max-w-3xl mx-auto">
+          Contamos con profesionales apasionados por la tecnología y el bienestar animal, comprometidos en crear la mejor experiencia para ti y tus mascotas.
+        </p>
+      </div>
+      
+      <!-- Espacio para futuras fotos de equipo -->
+      <div class="bg-[#5E388D]/5 rounded-2xl p-10 text-center scroll-animation fade-in">
+        <p class="text-[#5E388D] font-medium text-lg">Próximamente: Conoce a nuestro equipo de expertos</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Script de animaciones para la página about
+    function initScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.scroll-animation');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Inicializar animaciones
+    document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    document.addEventListener('astro:page-load', initScrollAnimations);
+  </script>
+
+  <style>
+    /* Estilos para animaciones */
+    .scroll-animation {
+      opacity: 0;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    
+    .fade-in {
+      transform: translateY(20px);
+    }
+    
+    .slide-up {
+      transform: translateY(40px);
+    }
+    
+    .animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </Layout>
