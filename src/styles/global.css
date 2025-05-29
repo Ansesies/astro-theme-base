@@ -1,4 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
+:root {
+  --color-primary: #5E388D;
+  --color-secondary: #F59D07;
+  --color-accent1: #4DBECD;
+  --color-accent2: #EB5B7C;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .nav-link {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilos para animaciones de scroll */
+.scroll-animation {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+  transform: translateY(20px);
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 
