@@ -1,16 +1,62 @@
 ---
 ---
-<section class="relative h-screen bg-cover bg-center" style="background-image: url('/hero_paisaje.jpg');">
-    <!-- Overlay oscuro para contraste -->
-    <div class="absolute inset-0 bg-black/50"></div>
+<section class="relative h-screen bg-cover bg-center" style="background-image: url('/pet-hero.jpg');">
+    <!-- Overlay con degradado utilizando colores de la marca -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#5E388D]/70 to-[#4DBECD]/60"></div>
   
     <!-- Contenido centrado -->
     <div class="relative z-10 flex items-center justify-center h-full text-center px-4">
-      <div class="text-white max-w-2xl">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-4">¡Bienvenido a Open-Pet.com!</h1>
-        <p class="text-lg sm:text-xl text-gray-200">
-            Tu compañero digital para el cuidado de mascotas. Registra, organiza y recuerda todo lo que tu mascota necesita para una vida feliz y saludable.
+      <div class="max-w-3xl">
+        <div class="flex flex-col items-center justify-center mb-16 mt-10">
+          <button class="group relative transition-all duration-300 hover:scale-105 mb-4">
+            <img src="/open_pet.png" alt="OpenPet Logo" class="h-20 cursor-pointer" />
+            <div class="absolute inset-0 bg-[#5E388D]/0 group-hover:bg-[#5E388D]/10 rounded-lg transition-all duration-300"></div>
+          </button>
+          <button class="download-btn group relative bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer hover:shadow-[0_0_15px_rgba(245,157,7,0.5)] border border-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white group-hover:text-[#F59D07] transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span class="sr-only">Descargar app</span>
+            <!-- Tooltip -->
+            <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-[#5E388D] text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg">
+              Descargar aplicación
+              <svg class="absolute text-[#5E388D] h-2 w-full left-0 top-full" x="0px" y="0px" viewBox="0 0 255 255"><polygon class="fill-current" points="0,0 127.5,127.5 255,0"></polygon></svg>
+            </div>
+          </button>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-white font-['Montserrat',_sans-serif] leading-tight">
+          <span class="block">Cuida de los que más quieres</span>
+          <span class="text-[#F59D07]">de forma inteligente</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-100 mb-8 font-light">
+          Tu compañero digital para el cuidado de mascotas. Registra, organiza y recuerda todo lo que tu mascota necesita para una vida feliz y saludable.
         </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/about" class="bg-[#F59D07] hover:bg-[#F59D07]/80 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg shadow-md">
+            Conocer más
+          </a>
+          <a href="/contact" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-medium py-3 px-8 rounded-full transition-all duration-300 hover:shadow-lg border border-white/30 shadow-md">
+            Contáctanos
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+<style>
+  /* Animación para el botón de descarga */
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(245, 157, 7, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(245, 157, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(245, 157, 7, 0); }
+  }
+  
+  .download-btn {
+    animation: pulse 2s infinite;
+    position: relative;
+  }
+  
+  .download-btn:hover {
+    animation: none;
+  }
+</style>
